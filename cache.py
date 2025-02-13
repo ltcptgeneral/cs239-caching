@@ -2,24 +2,24 @@ from abc import ABC, abstractmethod
 
 # implements a simple string k-v store, objects should be serialized before putting into the cache
 class Cache(ABC):
-    # constructor taking in the cache size limit as number of entries
     @abstractmethod
     def __init__(self, limit: int):
+        """Constructor taking in the cache size limit as number of entries"""
         pass
 
-    # get the value corresponding to key or returns None if there was a cache miss
     @abstractmethod
     def get(self, key: str) -> str:
+        """Get the value corresponding to key or returns None if there was a cache miss"""
         pass 
     
-    # set the value corresponding to key and returns True if an eviction was made
     @abstractmethod
     def put(self, key: str, val: str) -> bool:
+        """Set the value corresponding to key and returns True if an eviction was made"""
         pass
 
-    # mark cache item as invalid and returns True if the element was found and invalidated
     @abstractmethod
     def invalidate(self, key: str) -> bool:
+        """Mark cache item as invalid and returns True if the element was found and invalidated"""
         pass
 
 from collections import OrderedDict
