@@ -56,7 +56,8 @@ class BaselineCache(Cache):
             evict = True
         
         self.cache[key] = val
-        self.cache.move_to_end(key)
+        # no need for this since this op appends key-val by default
+        # self.cache.move_to_end(key)
 
         return evict
 
