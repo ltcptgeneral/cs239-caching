@@ -1,4 +1,4 @@
-from cache import BaselineCache
+from .cache import BaselineCache
 from collections import OrderedDict
 import os
 

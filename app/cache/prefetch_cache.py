@@ -1,4 +1,4 @@
-from cache import BaselineCache
+from .cache import BaselineCache
 
 class PrefetchCache(BaselineCache):
     key_relations = None

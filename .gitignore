@@ -1,1 +1,25 @@
-__pycache__
+# Ignore the virtual environment
+venv/
+
+# Ignore Python cache files
+__pycache__/
+**/__pycache__/
+
+# Ignore database files (TinyDB JSON)
+database.json
+
+# Ignore environment variables file (if used)
+.env
+
+# Ignore logs and temporary files
+*.log
+*.tmp
+
+# Ignore VSCode & PyCharm project files
+.vscode/
+.idea/
+
+# Ignore MacOS system files
+.DS_Store
+
+
