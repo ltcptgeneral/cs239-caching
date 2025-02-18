@@ -1,3 +1,3 @@
-cache_strategy: "Baseline"  # Change this to "Prefetch" or "Tiered"
+cache_strategy: "Baseline"  # Change this to "Prefetch" or "Tiered" or "Seive"
 cache_limit: 10
 l2_cache_limit: 100

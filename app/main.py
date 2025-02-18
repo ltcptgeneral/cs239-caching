@@ -3,6 +3,7 @@ from database import get_user_profile, update_user_profile
 from cache.cache import BaselineCache
 from cache.prefetch_cache import PrefetchCache
 from cache.tiered_cache import TieredCache
+from cache.eviction_seive import SeiveCache
 from config import CACHE_STRATEGY, CACHE_LIMIT, L2_CACHE_LIMIT
 import time
 
@@ -15,6 +16,8 @@ elif CACHE_STRATEGY == "Prefetch":
     cache = PrefetchCache()
 elif CACHE_STRATEGY == "Tiered":
     cache = TieredCache(limit=CACHE_LIMIT, l2_limit=L2_CACHE_LIMIT)
+elif CACHE_STRATEGY == "Seive":
+    cache = SeiveCache(limit=CACHE_LIMIT)
 else:
     raise ValueError(f"Invalid CACHE_STRATEGY: {CACHE_STRATEGY}")
 
