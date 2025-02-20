@@ -2,4 +2,4 @@ fastapi
 uvicorn
 tinydb
 pyyaml
-
+requests
