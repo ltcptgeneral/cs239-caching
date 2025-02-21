@@ -24,5 +24,6 @@ class PrefetchCache(BaselineCache):
             return True
         return False
 
-    def set_relations(self):
+    def set_relations(self, key: str, related_key: str, related_val: str):
+        self.key_relations[key] = related_key | related_val
         return

@@ -13,7 +13,7 @@ app = FastAPI()
 if CACHE_STRATEGY == "Baseline":
     cache = BaselineCache(limit=CACHE_LIMIT)
 elif CACHE_STRATEGY == "Prefetch":
-    cache = PrefetchCache()
+    cache = PrefetchCache(limit=CACHE_LIMIT)
 elif CACHE_STRATEGY == "Tiered":
     cache = TieredCache(limit=CACHE_LIMIT, l2_limit=L2_CACHE_LIMIT)
 elif CACHE_STRATEGY == "Seive":
@@ -37,8 +37,8 @@ def fetch_user_profile(user_id: str):
     return {"user_id": user_id, "profile": profile, "source": "database", "time_ms": (time.time() - start) * 1000}
 
 @app.post("/update_user/")
-def modify_user_profile(user_id: str, name: str, followers: int, bio: str, posts: str):
+def modify_user_profile(user_id: str, name: str, followers: int, bio: str, posts: str, friends: list[str]):
     """Update user profile and refresh cache"""
-    update_user_profile(user_id, name, followers, bio, posts)
+    update_user_profile(user_id, name, followers, bio, posts, friends)
     cache.invalidate(user_id)  # Invalidate old cache
     return {"message": "User profile updated successfully"}
