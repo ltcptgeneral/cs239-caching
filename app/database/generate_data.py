@@ -5,6 +5,7 @@ import warnings
 warnings.filterwarnings('ignore')
 import re
 import random
+import json
 
 HUGGINGFACEHUB_API_TOKEN = None
 os.environ["HUGGINGFACEHUB_API_TOKEN"] = HUGGINGFACEHUB_API_TOKEN
@@ -56,11 +57,20 @@ def generate_data(num_users):
         huggingfacehub_api_token=HUGGINGFACEHUB_API_TOKEN,
     )
     llm_chain = prompt | llm
-    data = []
+    data = {}
     for i in range(num_users): 
         raw_text = llm_chain.invoke({"user_id": i})
         user_profile = parse_profile(raw_text, i, num_users)
         if user_profile:
-            data.append(user_profile)
+            data[i] = user_profile
             
     return data
+
+if __name__ == "__main__":
+    data = generate_data(100)
+
+    # Create json file
+    json_object = json.dumps( {"_default": data}, indent=4 )
+    with open( "datastore/llmData_sns.json", "w" ) as f:
+        f.write( json_object )
+    

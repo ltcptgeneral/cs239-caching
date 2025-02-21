@@ -1,10 +1,11 @@
 
 from tinydb import TinyDB, Query
-from generate_data import generate_data
+from config import DB_FILE
+
+DB_LOCATION = "database/datastore/" + DB_FILE
 
 # Initialize TinyDB as a NoSQL key-value store
-DB_FILE = "database.json"
-db = TinyDB(DB_FILE)
+db = TinyDB(DB_LOCATION)
 User = Query()
 
 def get_user_profile(user_id):
@@ -19,9 +20,12 @@ def update_user_profile(user_id, name, followers, bio, posts, friends):
 def init_db():
     """Ensure TinyDB is initialized before FastAPI starts and prepopulate some data"""
     global db
-    db = TinyDB(DB_FILE)  # Reload TinyDB if needed
+    db = TinyDB(DB_LOCATION)  # Reload TinyDB if needed
 
     # Prepopulate database with some sample users if empty
     if len(db) == 0:
-        data = generate_data(100)
-        db.insert_multiple(data)
+        db.insert_multiple([
+            {"user_id": "1", "name": "Alice", "followers": 100, "bio": "Love coding!", "posts": "Hello, world!"},
+            {"user_id": "2", "name": "Bob", "followers": 200, "bio": "Tech enthusiast", "posts": "AI is amazing!"},
+            {"user_id": "3", "name": "Charlie", "followers": 50, "bio": "Blogger", "posts": "Check out my latest post!"}
+        ])

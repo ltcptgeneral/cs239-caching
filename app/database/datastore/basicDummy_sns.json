@@ -1,0 +1,214 @@
+{
+    "_default": {
+        "0": {
+            "user_id": "0",
+            "username": "user0",
+            "num_followers": 0,
+            "posts": "This is user 0's post!",
+            "friends": [
+                17,
+                13,
+                14
+            ]
+        },
+        "1": {
+            "user_id": "1",
+            "username": "user1",
+            "num_followers": 1,
+            "posts": "This is user 1's post!",
+            "friends": [
+                8,
+                17,
+                15,
+                3
+            ]
+        },
+        "2": {
+            "user_id": "2",
+            "username": "user2",
+            "num_followers": 4,
+            "posts": "This is user 2's post!",
+            "friends": [
+                9,
+                12
+            ]
+        },
+        "3": {
+            "user_id": "3",
+            "username": "user3",
+            "num_followers": 1,
+            "posts": "This is user 3's post!",
+            "friends": [
+                10,
+                7,
+                8,
+                14
+            ]
+        },
+        "4": {
+            "user_id": "4",
+            "username": "user4",
+            "num_followers": 0,
+            "posts": "This is user 4's post!",
+            "friends": [
+                13,
+                0
+            ]
+        },
+        "5": {
+            "user_id": "5",
+            "username": "user5",
+            "num_followers": 4,
+            "posts": "This is user 5's post!",
+            "friends": []
+        },
+        "6": {
+            "user_id": "6",
+            "username": "user6",
+            "num_followers": 3,
+            "posts": "This is user 6's post!",
+            "friends": []
+        },
+        "7": {
+            "user_id": "7",
+            "username": "user7",
+            "num_followers": 4,
+            "posts": "This is user 7's post!",
+            "friends": [
+                15,
+                13,
+                11,
+                17
+            ]
+        },
+        "8": {
+            "user_id": "8",
+            "username": "user8",
+            "num_followers": 2,
+            "posts": "This is user 8's post!",
+            "friends": [
+                4,
+                19
+            ]
+        },
+        "9": {
+            "user_id": "9",
+            "username": "user9",
+            "num_followers": 0,
+            "posts": "This is user 9's post!",
+            "friends": [
+                2,
+                10
+            ]
+        },
+        "10": {
+            "user_id": "10",
+            "username": "user10",
+            "num_followers": 5,
+            "posts": "This is user 10's post!",
+            "friends": [
+                7,
+                12
+            ]
+        },
+        "11": {
+            "user_id": "11",
+            "username": "user11",
+            "num_followers": 1,
+            "posts": "This is user 11's post!",
+            "friends": [
+                12,
+                8,
+                18,
+                4
+            ]
+        },
+        "12": {
+            "user_id": "12",
+            "username": "user12",
+            "num_followers": 1,
+            "posts": "This is user 12's post!",
+            "friends": [
+                5,
+                17,
+                8,
+                4
+            ]
+        },
+        "13": {
+            "user_id": "13",
+            "username": "user13",
+            "num_followers": 4,
+            "posts": "This is user 13's post!",
+            "friends": [
+                16,
+                10,
+                2,
+                8,
+                1
+            ]
+        },
+        "14": {
+            "user_id": "14",
+            "username": "user14",
+            "num_followers": 3,
+            "posts": "This is user 14's post!",
+            "friends": [
+                11
+            ]
+        },
+        "15": {
+            "user_id": "15",
+            "username": "user15",
+            "num_followers": 2,
+            "posts": "This is user 15's post!",
+            "friends": [
+                13,
+                14
+            ]
+        },
+        "16": {
+            "user_id": "16",
+            "username": "user16",
+            "num_followers": 5,
+            "posts": "This is user 16's post!",
+            "friends": [
+                13,
+                3,
+                14
+            ]
+        },
+        "17": {
+            "user_id": "17",
+            "username": "user17",
+            "num_followers": 3,
+            "posts": "This is user 17's post!",
+            "friends": [
+                0,
+                19,
+                2,
+                16
+            ]
+        },
+        "18": {
+            "user_id": "18",
+            "username": "user18",
+            "num_followers": 4,
+            "posts": "This is user 18's post!",
+            "friends": [
+                9
+            ]
+        },
+        "19": {
+            "user_id": "19",
+            "username": "user19",
+            "num_followers": 1,
+            "posts": "This is user 19's post!",
+            "friends": [
+                1,
+                12,
+                9
+            ]
+        }
+    }
+}
