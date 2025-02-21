@@ -10,10 +10,14 @@ endpoints = {
     "/user/{user_id}": 1
 }
 
+user_ids = json.loads(requests.get(baseurl + "/users").content)["ids"]
+
+random.seed(0)
+
 def generate_random():
     x = random.choices(list(endpoints.keys()), list(endpoints.values()))[0] # select randomly from endpoint (keys) with weight (values)
 
-    random_user = str(random.randint(1, 3))
+    random_user = str(random.choice(user_ids))
     x = x.replace("{user_id}", random_user)
 
     return baseurl + x

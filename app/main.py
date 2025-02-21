@@ -1,5 +1,5 @@
 from fastapi import FastAPI, HTTPException
-from database import get_user_profile, update_user_profile
+from database import get_user_ids, get_user_profile, update_user_profile
 from cache.cache import BaselineCache
 from cache.prefetch_cache import PrefetchCache
 from cache.tiered_cache import TieredCache
@@ -20,6 +20,10 @@ elif CACHE_STRATEGY == "Seive":
     cache = SeiveCache(limit=CACHE_LIMIT)
 else:
     raise ValueError(f"Invalid CACHE_STRATEGY: {CACHE_STRATEGY}")
+
+@app.get("/users")
+def fetch_user_ids():
+    return {"ids": get_user_ids()}
 
 @app.get("/user/{user_id}")
 def fetch_user_profile(user_id: str):

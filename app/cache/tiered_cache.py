@@ -36,7 +36,7 @@ class TieredCache(BaselineCache):
             path = f"tiered_cache/{k}"
             self.l2_map[k] = path
             f = open(path, "w+")
-            f.write(v)
+            f.write(str(v))
             f.close()
             
         self.cache[key] = val

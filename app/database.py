@@ -8,6 +8,9 @@ DB_LOCATION = "database/datastore/" + DB_FILE
 db = TinyDB(DB_LOCATION)
 User = Query()
 
+def get_user_ids():
+    return [x["user_id"] for x in db.all()]
+
 def get_user_profile(user_id):
     """Fetch user profile from TinyDB"""
     result = db.search(User.user_id == user_id)
