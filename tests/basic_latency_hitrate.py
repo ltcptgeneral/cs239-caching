@@ -25,7 +25,7 @@ def generate_random():
 times = []
 hits = []
 
-for i in range(1000):
+for i in range(10000):
     url = generate_random()
     response = requests.get(url)
     content = json.loads(response.content)
