@@ -28,7 +28,7 @@ def init_db():
     # Prepopulate database with some sample users if empty
     if len(db) == 0:
         db.insert_multiple([
-            {"user_id": "1", "name": "Alice", "followers": 100, "bio": "Love coding!", "posts": "Hello, world!"},
-            {"user_id": "2", "name": "Bob", "followers": 200, "bio": "Tech enthusiast", "posts": "AI is amazing!"},
-            {"user_id": "3", "name": "Charlie", "followers": 50, "bio": "Blogger", "posts": "Check out my latest post!"}
+            {"user_id": "1", "name": "Alice", "followers": 100, "bio": "Love coding!", "posts": "Hello, world!", "friends": ["2"]},
+            {"user_id": "2", "name": "Bob", "followers": 200, "bio": "Tech enthusiast", "posts": "AI is amazing!","friends": ["3", "1"]},
+            {"user_id": "3", "name": "Charlie", "followers": 50, "bio": "Blogger", "posts": "Check out my latest post!", "friends": ["1"]}
         ])
