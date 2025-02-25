@@ -1,5 +1,5 @@
 from .cache import Cache
-from database import get_user_profile
+from database import get_user_profile, get_friends
 from collections import OrderedDict
 import math
 
@@ -39,15 +39,12 @@ class PrefetchCache(Cache):
     
     def prefetch(self, profile) -> bool:
         evict = False
-        for i in range(math.ceil(self.limit*0.1)):
-            if i < len(profile["friends"]):
-                data = get_user_profile(profile["friends"][i])
-                if len(self.cache) >= self.limit:
-                    self.cache.popitem(last = False)
-                    evict = True
-                self.cache[profile["friends"][i]] = data
-            else:
-                break
+        friends_prof = get_friends(profile["user_id"], math.ceil(self.limit*0.1))
+        for i in friends_prof:
+            if len(self.cache) >= self.limit:
+                self.cache.popitem(last = False)
+                evict = True
+            self.cache[i] = friends_prof[i]
         return evict
 
     def invalidate(self, key: str) -> bool:

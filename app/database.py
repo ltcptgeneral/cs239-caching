@@ -1,6 +1,7 @@
 
 from tinydb import TinyDB, Query
 from config import DB_FILE
+import random
 
 DB_LOCATION = "database/datastore/" + DB_FILE
 
@@ -10,6 +11,22 @@ User = Query()
 
 def get_user_ids():
     return [x["user_id"] for x in db.all()]
+
+def get_user_friend_ids():
+    user_friends = {}
+    for x in db.all():
+        user_friends[x["user_id"]] = x["friends"]
+    return user_friends
+
+def get_friends(user_id, num_friends):
+    friends = {}
+    curr_user = db.search(User.user_id == user_id)
+    random.seed(0)
+    if not curr_user:
+        return {}
+    for f in random.sample(curr_user[0]["friends"], num_friends):
+        friends[f] = db.search(User.user_id == user_id)[0]
+    return friends
 
 def get_user_profile(user_id):
     """Fetch user profile from TinyDB"""

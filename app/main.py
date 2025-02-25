@@ -1,5 +1,5 @@
 from fastapi import FastAPI, HTTPException
-from database import get_user_ids, get_user_profile, update_user_profile
+from database import get_user_ids, get_user_profile, update_user_profile, get_user_friend_ids
 from cache.cache import BaselineCache
 from cache.prefetch_cache import PrefetchCache
 from cache.tiered_cache import TieredCache
@@ -24,6 +24,10 @@ else:
 @app.get("/users")
 def fetch_user_ids():
     return {"ids": get_user_ids()}
+
+@app.get("/users_and_friends")
+def fetch_user_and_friends():
+    return get_user_friend_ids()
 
 @app.get("/user/{user_id}")
 def fetch_user_profile(user_id: str):
