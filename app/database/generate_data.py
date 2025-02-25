@@ -27,7 +27,7 @@ def parse_profile(text, user_id, num_users):
     
     followers = random.randint(10, 5000)
 
-    friend_ids = [str(fid) for fid in range(num_users) if fid != user_id]
+    friend_ids = [str(fid) for fid in range(user_id) if fid != user_id]
     random.shuffle(friend_ids)
     friends = friend_ids[:random.randint(1, min(100, math.ceil(num_users/3)))] 
 
