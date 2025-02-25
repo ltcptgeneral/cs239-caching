@@ -33,20 +33,17 @@ class SeiveCache(Cache):
         if key in self.cache:
             node = self.cache[key]
             node.visited = True
-            print(f"GET {key}: {node.value}")
-            self.print_cache_state()
+            #self.print_cache_state()
             return node.value
-        print(f"GET {key}: MISS")
         self.print_cache_state()
         return None
     
     def put(self, key: str, val: str) -> bool:
-        print(f"PUT {key}: {val}")
         if key in self.cache:
             node = self.cache[key]
             node.value = val
             node.visited = True
-            self.print_cache_state()
+            #self.print_cache_state()
             return False  # No eviction needed
         
         new_node = Node(key, val)
@@ -66,11 +63,10 @@ class SeiveCache(Cache):
         self.cache[key] = new_node
         if not self.hand:
             self.hand = self.head
-        self.print_cache_state()
+        #self.print_cache_state()
         return False
     
     def invalidate(self, key: str) -> bool:
-        print(f"INVALIDATE {key}")
         if key in self.cache:
             node = self.cache.pop(key)
             if node == self.head:
@@ -81,16 +77,14 @@ class SeiveCache(Cache):
                 node.next.prev = node.prev
             if node.prev:
                 node.prev.next = node.next
-            self.print_cache_state()
+            #self.print_cache_state()
             return True
-        print("INVALIDATE FAILED: Key not found")
         return False
     
     def next_hand(self):
         self.hand = self.hand.next if self.hand.next else self.head
     
     def evict(self):
-        print("EVICTION START")
         while self.hand.visited:
             self.hand.visited = False
             self.next_hand()
@@ -107,8 +101,7 @@ class SeiveCache(Cache):
             obj_to_evict.prev.next = obj_to_evict.next
         
         del self.cache[obj_to_evict.key]
-        print(f"EVICTED {obj_to_evict.key}")
-        self.print_cache_state()
+        #self.print_cache_state()
 
 # Basic API demo for future testing
 if __name__ == "__main__":
