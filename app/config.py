@@ -1,7 +1,8 @@
 import os
 import yaml
+import sys
 
-CONFIG_FILE = "config.yaml"
+CONFIG_FILE = sys.argv[1]
 
 def load_config():
     with open(CONFIG_FILE, "r") as f:

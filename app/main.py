@@ -11,12 +11,16 @@ app = FastAPI()
 
 # Initialize cache based on strategy from config.yaml or environment variable
 if CACHE_STRATEGY == "Baseline":
+    print("Using baseline cache strategy")
     cache = BaselineCache(limit=CACHE_LIMIT)
 elif CACHE_STRATEGY == "Prefetch":
+    print("Using prefetch cache strategy")
     cache = PrefetchCache(limit=CACHE_LIMIT)
 elif CACHE_STRATEGY == "Tiered":
+    print("Using tiered cache strategy")
     cache = TieredCache(limit=CACHE_LIMIT, l2_limit=L2_CACHE_LIMIT)
 elif CACHE_STRATEGY == "Seive":
+    print("Using seive cache strategy")
     cache = SeiveCache(limit=CACHE_LIMIT)
 else:
     raise ValueError(f"Invalid CACHE_STRATEGY: {CACHE_STRATEGY}")
