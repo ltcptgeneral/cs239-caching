@@ -21,6 +21,11 @@ class TieredCache(BaselineCache):
                 f = open(self.l2_map[key], "r")
                 v = f.read()
                 f.close()
+
+                # we will also preemptively return the value from l1 to l2:
+                del self.l2_map[key]
+                self.put(key, v)
+
                 return v
             else: # otherwise its a cache miss and return None
                 return None
