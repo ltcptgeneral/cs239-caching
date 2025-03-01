@@ -42,6 +42,7 @@ def fetch_user_profile(user_id: str):
         return {"user_id": user_id, "profile": cached_profile, "source": "cache", "time_ms": (time.time() - start) * 1000}
 
     profile = get_user_profile(user_id)
+    time.sleep(10 / 1000) # simulate 10 ms db delay
     if profile is None:
         raise HTTPException(status_code=404, detail="User not found")
 

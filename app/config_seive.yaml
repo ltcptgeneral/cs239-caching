@@ -1,4 +1,4 @@
-cache_strategy: "Seive"  # Change this to "Prefetch" or "Tiered" or "Seive"
-cache_limit: 10
-l2_cache_limit: 100
+cache_strategy: "Seive"
+cache_limit: 50
+l2_cache_limit: 100 # unused
 db_file: "llmData_sns.json" # Change this to the name of any json file within the "database/datastore" folder
