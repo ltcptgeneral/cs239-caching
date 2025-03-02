@@ -3,6 +3,7 @@ import random
 import json
 from tqdm import tqdm
 import time
+from utils import print_report
 
 baseurl = "http://localhost:8000"
 
@@ -61,16 +62,4 @@ for i in tqdm(range(10000)):
 
 end = time.time()
 
-hits_count = sum(hits)
-miss_count = len(hits) - hits_count
-
-hits_time = sum(times[i] for i in range(len(times)) if hits[i])
-miss_time = sum(times[i] for i in range(len(times)) if not hits[i])
-total_time = hits_time + miss_time
-
-print(f"hits: {hits_count} misses: {miss_count} ratio: {hits_count / (hits_count + miss_count):.2f}")
-print(f"average response time (ms)           : {total_time / len(times):.2f}")
-print(f"average cache hit response time (ms) : {hits_time / hits_count if hits_count else 0:.2f}")
-print(f"average cache miss response time (ms): {miss_time / miss_count if miss_count else 0:.2f}")
-print(f"cache throughput (requests / ms)     : {len(times) / total_time:.2f}")
-print(f"real throughput  (requests / ms)     : {len(times) / (end - start) / 1000:.2f}")
+print_report(hits, times, end - start)

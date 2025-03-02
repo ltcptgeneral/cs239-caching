@@ -1,0 +1,4 @@
+cache_strategy: "Ideal"
+cache_limit: 50
+l2_cache_limit: 100 # unused
+db_file: "llmData_sns.json" # Change this to the name of any json file within the "database/datastore" folder

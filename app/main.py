@@ -4,6 +4,8 @@ from cache.cache import BaselineCache
 from cache.prefetch_cache import PrefetchCache
 from cache.tiered_cache import TieredCache
 from cache.eviction_seive import SeiveCache
+from cache.nocache import NoCache
+from cache.idealcache import IdealCache
 from config import CACHE_STRATEGY, CACHE_LIMIT, L2_CACHE_LIMIT
 import time
 
@@ -22,6 +24,12 @@ elif CACHE_STRATEGY == "Tiered":
 elif CACHE_STRATEGY == "Seive":
     print("Using seive cache strategy")
     cache = SeiveCache(limit=CACHE_LIMIT)
+elif CACHE_STRATEGY == "None":
+    print("Using no cache strategy")
+    cache = NoCache(limit=CACHE_LIMIT)
+elif CACHE_STRATEGY == "Ideal":
+    print("Using ideal cache strategy")
+    cache = IdealCache(limit=CACHE_LIMIT)
 else:
     raise ValueError(f"Invalid CACHE_STRATEGY: {CACHE_STRATEGY}")
 
@@ -42,7 +50,7 @@ def fetch_user_profile(user_id: str):
         return {"user_id": user_id, "profile": cached_profile, "source": "cache", "time_ms": (time.time() - start) * 1000}
 
     profile = get_user_profile(user_id)
-    time.sleep(10 / 1000) # simulate 10 ms db delay
+    time.sleep(10 / 1000) # simulate 10 ms db delay, we do this here instead of the actual db in the ideal cache case
     if profile is None:
         raise HTTPException(status_code=404, detail="User not found")
 
