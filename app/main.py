@@ -6,6 +6,7 @@ from cache.tiered_cache import TieredCache
 from cache.eviction_seive import SeiveCache
 from cache.nocache import NoCache
 from cache.idealcache import IdealCache
+from cache.read_after_write_cache import ReadAfterWriteCache
 from config import CACHE_STRATEGY, CACHE_LIMIT, L2_CACHE_LIMIT
 import time
 
@@ -30,6 +31,9 @@ elif CACHE_STRATEGY == "None":
 elif CACHE_STRATEGY == "Ideal":
     print("Using ideal cache strategy")
     cache = IdealCache(limit=CACHE_LIMIT)
+elif CACHE_STRATEGY == "ReadAfterWrite":
+    print("Using read-after-write cache strategy")
+    cache = ReadAfterWriteCache(limit=CACHE_LIMIT)
 else:
     raise ValueError(f"Invalid CACHE_STRATEGY: {CACHE_STRATEGY}")
 
