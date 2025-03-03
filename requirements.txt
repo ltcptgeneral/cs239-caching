@@ -3,3 +3,4 @@ uvicorn
 tinydb
 pyyaml
 requests
+tqdm
