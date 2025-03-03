@@ -8,7 +8,7 @@ class Node:
         self.next = None
         self.prev = None
 
-class SeiveCache(Cache):
+class SieveCache(Cache):
     def __init__(self, limit: int):
         super().__init__(limit)
         self.limit = limit  # Fix: Store limit properly

@@ -3,7 +3,7 @@ from database import get_user_ids, get_user_profile, update_user_profile, get_us
 from cache.cache import BaselineCache
 from cache.prefetch_cache import PrefetchCache
 from cache.tiered_cache import TieredCache
-from cache.eviction_seive import SeiveCache
+from cache.eviction_sieve import SieveCache
 from cache.nocache import NoCache
 from cache.idealcache import IdealCache
 from cache.read_after_write_cache import ReadAfterWriteCache
@@ -22,9 +22,9 @@ elif CACHE_STRATEGY == "Prefetch":
 elif CACHE_STRATEGY == "Tiered":
     print("Using tiered cache strategy")
     cache = TieredCache(limit=CACHE_LIMIT, l2_limit=L2_CACHE_LIMIT)
-elif CACHE_STRATEGY == "Seive":
-    print("Using seive cache strategy")
-    cache = SeiveCache(limit=CACHE_LIMIT)
+elif CACHE_STRATEGY == "Sieve":
+    print("Using sieve cache strategy")
+    cache = SieveCache(limit=CACHE_LIMIT)
 elif CACHE_STRATEGY == "None":
     print("Using no cache strategy")
     cache = NoCache(limit=CACHE_LIMIT)
