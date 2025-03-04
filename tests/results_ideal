@@ -1,0 +1,48 @@
+
+--- random_read Results ---
+hits: 10000 misses: 0 ratio: 1.0
+average response time (ms)           : 2.7374683618545532
+average cache hit response time (ms) : 2.7374683618545532
+average cache miss response time (ms): N/A
+cache throughput (requests / s)      : 365.3010255514076
+real throughput  (requests / s)      : 264.62084114988136
+
+--- read_heavy Results ---
+hits: 8025 misses: 0 ratio: 1.0
+average response time (ms)           : 2.3531507034539434
+average cache hit response time (ms) : 2.3531507034539434
+average cache miss response time (ms): N/A
+cache throughput (requests / s)      : 424.96215755846185
+real throughput  (requests / s)      : 174.59831308637462
+
+--- write_heavy Results ---
+hits: 2018 misses: 0 ratio: 1.0
+average response time (ms)           : 2.5427952275876367
+average cache hit response time (ms) : 2.5427952275876367
+average cache miss response time (ms): N/A
+cache throughput (requests / s)      : 393.26800253149185
+real throughput  (requests / s)      : 24.773972578001025
+
+--- frequent_users Results ---
+hits: 10000 misses: 0 ratio: 1.0
+average response time (ms)           : 1.3468331575393677
+average cache hit response time (ms) : 1.3468331575393677
+average cache miss response time (ms): N/A
+cache throughput (requests / s)      : 742.4824629555278
+real throughput  (requests / s)      : 424.7398305196224
+
+--- frequent_after_write Results ---
+hits: 7051 misses: 0 ratio: 1.0
+average response time (ms)           : 2.385091923632667
+average cache hit response time (ms) : 2.385091923632667
+average cache miss response time (ms): N/A
+cache throughput (requests / s)      : 419.2710520259227
+real throughput  (requests / s)      : 135.68660253639203
+
+--- friend_based Results ---
+hits: 10000 misses: 0 ratio: 1.0
+average response time (ms)           : 2.2926381111145018
+average cache hit response time (ms) : 2.2926381111145018
+average cache miss response time (ms): N/A
+cache throughput (requests / s)      : 436.17873887382865
+real throughput  (requests / s)      : 301.36281418496594

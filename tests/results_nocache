@@ -1,0 +1,48 @@
+
+--- random_read Results ---
+hits: 0 misses: 10000 ratio: 0.0
+average response time (ms)           : 12.805271649360657
+average cache hit response time (ms) : N/A
+average cache miss response time (ms): 12.805271649360657
+cache throughput (requests / s)     : 78.09283765174385
+real throughput  (requests / s)     : 71.53643320734811
+
+--- read_heavy Results ---
+hits: 0 misses: 8025 ratio: 0.0
+average response time (ms)           : 12.849865197392639
+average cache hit response time (ms) : N/A
+average cache miss response time (ms): 12.849865197392639
+cache throughput (requests / s)     : 77.82182806111534
+real throughput  (requests / s)     : 70.04929255901189
+
+--- write_heavy Results ---
+hits: 0 misses: 2018 ratio: 0.0
+average response time (ms)           : 12.95277124826452
+average cache hit response time (ms) : N/A
+average cache miss response time (ms): 12.95277124826452
+cache throughput (requests / s)     : 77.20355596752974
+real throughput  (requests / s)     : 55.53823196963498
+
+--- frequent_users Results ---
+hits: 0 misses: 10000 ratio: 0.0
+average response time (ms)           : 11.695257019996642
+average cache hit response time (ms) : N/A
+average cache miss response time (ms): 11.695257019996642
+cache throughput (requests / s)     : 85.50474763318087
+real throughput  (requests / s)     : 77.81244515584922
+
+--- frequent_after_write Results ---
+hits: 0 misses: 7033 ratio: 0.0
+average response time (ms)           : 12.835719143701926
+average cache hit response time (ms) : N/A
+average cache miss response time (ms): 12.835719143701926
+cache throughput (requests / s)      : 77.90759433145341
+real throughput  (requests / s)      : 69.39886021669655
+
+--- friend_based Results ---
+hits: 0 misses: 10000 ratio: 0.0
+average response time (ms)           : 12.832593774795532
+average cache hit response time (ms) : N/A
+average cache miss response time (ms): 12.832593774795532
+cache throughput (requests / s)      : 77.92656866954658
+real throughput  (requests / s)      : 71.39764514813521
