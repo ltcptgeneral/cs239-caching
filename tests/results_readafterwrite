@@ -32,17 +32,17 @@ cache throughput (requests / s)      : 267.05850236182243
 real throughput  (requests / s)      : 210.51762371076964
 
 --- frequent_after_write Results ---
-hits: 360 misses: 6691 ratio: 0.05105658771805418
-average response time (ms)           : 12.24339290673539
-average cache hit response time (ms) : 0.001308653089735243
-average cache miss response time (ms): 12.902061316735754
-cache throughput (requests / s)      : 81.67670576428822
-real throughput  (requests / s)      : 72.40871904858658
+hits: 3509 misses: 1421 ratio: 0.711764705882353
+average response time (ms)           : 3.600564883156674
+average cache hit response time (ms) : 0.0013591693520511987
+average cache miss response time (ms): 12.488399400919109
+cache throughput (requests / s)      : 277.7341979526512
+real throughput  (requests / s)      : 60.02808337161936
 
---- friend_based Results ---
-hits: 471 misses: 9529 ratio: 0.0471
-average response time (ms)           : 12.260680532455444
-average cache hit response time (ms) : 0.0013343341284749867
-average cache miss response time (ms): 12.866636252826103
-cache throughput (requests / s)      : 81.56154116836206
-real throughput  (requests / s)      : 74.51413302473193
+--- weighted_friend_readonly Results ---
+hits: 1275 misses: 8725 ratio: 0.1275
+average response time (ms)           : 11.231861686706543
+average cache hit response time (ms) : 0.0015234479717179841
+average cache miss response time (ms): 12.872971286063208
+cache throughput (requests / s)      : 89.03243539613284
+real throughput  (requests / s)      : 80.69348254832964
