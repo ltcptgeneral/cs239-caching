@@ -9,8 +9,8 @@ from utils import print_report
 baseurl = "http://localhost:8000"
 
 endpoints = {
-    "/user/{user_id}": 0.5,  # 80% read operations
-    "/update_user/?user_id={user_id}&name=Test&followers=100&bio=Updated&posts=Updated": 0.5  # 20% write operations
+    "/user/{user_id}": 0.5,  # 50% read operations
+    "/update_user/?user_id={user_id}&name=Test&followers=100&bio=Updated&posts=Updated": 0.5  # 50% write operations
 }
 
 # Fetch all user IDs
