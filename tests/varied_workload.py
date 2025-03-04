@@ -30,12 +30,13 @@ def generate_request(workload, last_updated=None):
     """Generate read or write requests based on workload type"""
     if random.random() < workload["read"]:
         user_id = select_user(workload, last_updated)
-        return baseurl + f"/user/{user_id}", "GET"
+        return baseurl + f"/user/{user_id}", None, "GET"
 
     # Write operation (updates user profile)
     user_id = select_user(workload, last_updated)
-    url = baseurl + f"/update_user/?user_id={user_id}&name=UpdatedUser&followers=500&bio=Updated&posts=UpdatedPost"
-    return url, "POST"
+    write_obj = { "user_id":user_id,"name": "UpdatedUser", "followers":"500","bio":"Updated","posts":"UpdatedPost"}
+    url = baseurl + f"/update_user/"
+    return url, write_obj, "POST"
 
 def select_user(workload, last_updated):
     """Selects a user based on workload type"""
@@ -55,8 +56,12 @@ def run_workload(name, workload):
     last_updated = None
 
     for _ in tqdm(range(10000), desc=f"Running {name}"):
-        url, method = generate_request(workload, last_updated)
-        response = requests.request(method, url)
+        url, data, method = generate_request(workload, last_updated)
+        
+        if( method == "GET" ):
+            response = requests.request(method, url)
+        else:
+            response = requests.post(url, json = data)
 
         try:
             content = json.loads(response.content)

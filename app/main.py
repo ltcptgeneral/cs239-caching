@@ -8,6 +8,7 @@ from cache.nocache import NoCache
 from cache.idealcache import IdealCache
 from cache.read_after_write_cache import ReadAfterWriteCache
 from config import CACHE_STRATEGY, CACHE_LIMIT, L2_CACHE_LIMIT
+from models.models import User
 import time
 
 app = FastAPI()
@@ -62,8 +63,11 @@ def fetch_user_profile(user_id: str):
     return {"user_id": user_id, "profile": profile, "source": "database", "time_ms": (time.time() - start) * 1000}
 
 @app.post("/update_user/")
-def modify_user_profile(user_id: str, name: str, followers: int, bio: str, posts: str, friends: list[str]):
+async def modify_user_profile(user_data : User):
     """Update user profile and refresh cache"""
-    update_user_profile(user_id, name, followers, bio, posts, friends)
+    user_id=user_data.user_id
+    user_dict = user_data.dict()
+    
+    update_user_profile(user_dict)
     cache.invalidate(user_id)  # Invalidate old cache
     return {"message": "User profile updated successfully"}
