@@ -22,5 +22,5 @@ def print_report(hits, request_times, real_time):
         print(f"average cache miss response time (ms): {miss_time / miss_count}")
     else:
         print(f"average cache miss response time (ms): N/A")
-    print(f"cache throughput (requests / s)     : { len(request_times) / total_time * 1000}")
-    print(f"real throughput  (requests / s)     : { len(request_times) / (real_time)}")
+    print(f"cache throughput (requests / s)      : { len(request_times) / total_time * 1000}")
+    print(f"real throughput  (requests / s)      : { len(request_times) / (real_time)}")

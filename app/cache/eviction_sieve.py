@@ -18,13 +18,13 @@ class SieveCache(Cache):
         self.hand = None
     
     def print_cache_state(self):
-        print("Current cache state:")
+        #print("Current cache state:")
         node = self.head
         if not node:
-            print("Cache is empty.")
+            #print("Cache is empty.")
             return
         for _ in range(len(self.cache)):
-            print(f"Key: {node.key}, Value: {node.value}, Visited: {node.visited}")
+            #print(f"Key: {node.key}, Value: {node.value}, Visited: {node.visited}")
             node = node.next
             if node == self.head:
                 break
