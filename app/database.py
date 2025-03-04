@@ -1,12 +1,16 @@
-
 from tinydb import TinyDB, Query
 from config import DB_FILE
+import shutil
+
 import random
 
 DB_LOCATION = "database/datastore/" + DB_FILE
 
 # Initialize TinyDB as a NoSQL key-value store
-db = TinyDB(DB_LOCATION)
+# We don't want to change our main DB file, so we will make a temp DB file and use that as our DB file
+shutil.copyfile( DB_LOCATION, "temp_DB.json" )
+
+db = TinyDB("temp_DB.json")
 User = Query()
 
 def get_user_ids():
@@ -34,9 +38,16 @@ def get_user_profile(user_id):
     result = db.search(User.user_id == user_id)
     return result[0] if result else None
 
-def update_user_profile(user_id, name, followers, bio, posts, friends):
+def update_user_profile( data ):
     """Update user profile in TinyDB"""
-    db.upsert({"user_id": user_id, "name": name, "followers": followers, "bio": bio, "posts": posts, "friends": friends}, User.user_id == user_id)
+    user_id = str( data["user_id"] )
+
+    # Basically make sure friends stay the same (for prefetching). Not great implementation, but it works
+    curr_user = db.search(User.user_id == user_id)
+    if( curr_user and data["friends"] == None ):
+        data["friends"] = curr_user[0]["friends"]
+
+    db.upsert( data, User.user_id == user_id )
 
 def init_db():
     """Ensure TinyDB is initialized before FastAPI starts and prepopulate some data"""
