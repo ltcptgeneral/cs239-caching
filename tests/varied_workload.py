@@ -19,7 +19,7 @@ workloads = {
     "read_heavy": {"read": 0.8, "write": 0.2},
     "write_heavy": {"read": 0.2, "write": 0.8},
     "frequent_users": {"read": 1.0, "write": 0.0, "frequent_percent": 0.7},
-    "frequent_after_write": {"read": 0.7, "write": 0.3},
+    #"frequent_after_write": {"read": 0.7, "write": 0.3},
     "friend_based": {"read": 1.0, "write": 0.0, "friend_access": 0.7},
 }
 
