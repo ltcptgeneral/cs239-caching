@@ -28,7 +28,8 @@ def get_friends(user_id, num_friends):
     random.seed(0)
     if not curr_user:
         return {}
-    for f in random.sample(curr_user[0]["friends"], num_friends):
+    sample_size = min(num_friends, len(curr_user[0]["friends"]))
+    for f in random.sample(curr_user[0]["friends"], sample_size):
         friends[f] = db.search(User.user_id == user_id)[0]
     return friends
 
