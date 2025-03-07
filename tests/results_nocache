@@ -39,10 +39,34 @@ average cache miss response time (ms): 12.357432702008415
 cache throughput (requests / s)      : 80.92295739045157
 real throughput  (requests / s)      : 43.34797667618127
 
---- weighted_friend_readonly Results ---
+--- weighted_friend_readonly 0.25 Results ---
 hits: 0 misses: 10000 ratio: 0.0
-average response time (ms)           : 12.757544946670532
+average response time (ms)           : 12.735849499702454
 average cache hit response time (ms) : N/A
-average cache miss response time (ms): 12.757544946670532
-cache throughput (requests / s)      : 78.38498740786174
-real throughput  (requests / s)      : 71.68974303163175
+average cache miss response time (ms): 12.735849499702454
+cache throughput (requests / s)      : 78.51851578674534
+real throughput  (requests / s)      : 71.97159807797185
+
+--- weighted_friend_readonly 0.50 Results ---
+hits: 0 misses: 10000 ratio: 0.0
+average response time (ms)           : 12.631608128547668
+average cache hit response time (ms) : N/A
+average cache miss response time (ms): 12.631608128547668
+cache throughput (requests / s)      : 79.16648377810118
+real throughput  (requests / s)      : 72.52127479757786
+
+--- weighted_friend_readonly 0.75 Results ---
+hits: 0 misses: 10000 ratio: 0.0
+average response time (ms)           : 12.301788067817688
+average cache hit response time (ms) : N/A
+average cache miss response time (ms): 12.301788067817688
+cache throughput (requests / s)      : 81.28899591564806
+real throughput  (requests / s)      : 74.36930521285352
+
+--- weighted_friend_readonly 1 Results ---
+hits: 0 misses: 10000 ratio: 0.0
+average response time (ms)           : 10.0695650100708
+average cache hit response time (ms) : N/A
+average cache miss response time (ms): 10.0695650100708
+cache throughput (requests / s)      : 99.3091557579575
+real throughput  (requests / s)      : 89.69346607705592

@@ -39,10 +39,34 @@ average cache miss response time (ms): 12.493911461160938
 cache throughput (requests / s)      : 102.16957445113012
 real throughput  (requests / s)      : 48.726267135940624
 
---- weighted_friend_readonly Results ---
-hits: 1275 misses: 8725 ratio: 0.1275
-average response time (ms)           : 11.204515027999879
-average cache hit response time (ms) : 0.0013659982120289521
-average cache miss response time (ms): 12.841651419172313
-cache throughput (requests / s)      : 89.249735263063
-real throughput  (requests / s)      : 80.8252530462673
+--- weighted_friend_readonly 0.25 Results ---
+hits: 634 misses: 9366 ratio: 0.0634
+average response time (ms)           : 12.046342158317566
+average cache hit response time (ms) : 0.0014511944743737062
+average cache miss response time (ms): 12.861680709574943
+cache throughput (requests / s)      : 83.01275082988872
+real throughput  (requests / s)      : 75.60957264263929
+
+--- weighted_friend_readonly 0.50 Results ---
+hits: 1069 misses: 8931 ratio: 0.1069
+average response time (ms)           : 11.471518325805665
+average cache hit response time (ms) : 0.0013089603748803278
+average cache miss response time (ms): 12.844450115263228
+cache throughput (requests / s)      : 87.1724188201363
+real throughput  (requests / s)      : 79.16835820770777
+
+--- weighted_friend_readonly 0.75 Results ---
+hits: 2255 misses: 7745 ratio: 0.2255
+average response time (ms)           : 9.954997634887695
+average cache hit response time (ms) : 0.0012764645257175894
+average cache miss response time (ms): 12.853079137685146
+cache throughput (requests / s)      : 100.4520580191259
+real throughput  (requests / s)      : 90.12648776249651
+
+--- weighted_friend_readonly 1 Results ---
+hits: 9992 misses: 8 ratio: 0.9992
+average response time (ms)           : 0.011115074157714844
+average cache hit response time (ms) : 0.0008463239173492114
+average cache miss response time (ms): 12.83678412437439
+cache throughput (requests / s)      : 89967.91076791077
+real throughput  (requests / s)      : 1050.3783705054095

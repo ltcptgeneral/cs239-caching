@@ -9,7 +9,7 @@ from utils import print_report
 
 baseurl = "http://localhost:8000"
 
-chance_of_selecting_friend = 0.7
+chance_of_selecting_friend = 1
 
 user_friends = json.loads(requests.get(baseurl + "/users_and_friends").content)
 user_ids = json.loads(requests.get(baseurl + "/users").content)["ids"]
