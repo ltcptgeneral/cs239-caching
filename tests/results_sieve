@@ -1,0 +1,47 @@
+--- random_read Results ---
+hits: 1019 misses: 8981 ratio: 0.1019
+average response time (ms)           : 13.882123780250549
+average cache hit response time (ms) : 0.0010722986732310707
+average cache miss response time (ms): 15.457092209125651
+cache throughput (requests / s)      : 72.03508741383314
+real throughput  (requests / s)      : 63.77470400544125
+
+--- read_heavy Results ---
+hits: 803 misses: 7222 ratio: 0.10006230529595016
+average response time (ms)           : 13.242761249482818
+average cache hit response time (ms) : 0.000984849846674823
+average cache miss response time (ms): 14.715088367858312
+cache throughput (requests / s)      : 75.51295240930618
+real throughput  (requests / s)      : 58.581188594379874
+
+--- write_heavy Results ---
+hits: 210 misses: 1808 ratio: 0.10406342913776016
+average response time (ms)           : 12.672739766161554
+average cache hit response time (ms) : 0.0010308765229724702
+average cache miss response time (ms): 14.14456436064391
+cache throughput (requests / s)      : 78.9095348324106
+real throughput  (requests / s)      : 24.94878943653593
+
+--- frequent_users Results ---
+hits: 7235 misses: 2765 ratio: 0.7235
+average response time (ms)           : 4.018647408485412
+average cache hit response time (ms) : 0.0006961427067754675
+average cache miss response time (ms): 14.532165458361883
+cache throughput (requests / s)      : 248.83994497464258
+real throughput  (requests / s)      : 181.31597211320386
+
+--- frequent_after_write Results ---
+hits: 1103 misses: 3827 ratio: 0.22373225152129816
+average response time (ms)           : 11.080196082712913
+average cache hit response time (ms) : 0.0008352215681309497
+average cache miss response time (ms): 14.273437532893913
+cache throughput (requests / s)      : 90.2511104077101
+real throughput  (requests / s)      : 50.809783230994924
+
+--- weighted_friend_readonly Results ---
+hits: 3403 misses: 6597 ratio: 0.3403
+average response time (ms)           : 9.799546551704406
+average cache hit response time (ms) : 0.000995711092033913
+average cache miss response time (ms): 14.854036245596161
+cache throughput (requests / s)      : 102.04553799747733
+real throughput  (requests / s)      : 86.61266112308168
