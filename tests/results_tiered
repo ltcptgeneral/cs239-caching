@@ -40,33 +40,33 @@ cache throughput (requests / s)      : 107.27478709180934
 real throughput  (requests / s)      : 49.79781897651969
 
 --- weighted_friend_readonly 0.25 Results ---
-hits: 635 misses: 9365 ratio: 0.0635
-average response time (ms)           : 12.026190519332886
-average cache hit response time (ms) : 0.0014263813889871433
-average cache miss response time (ms): 12.841537580474837
-cache throughput (requests / s)      : 83.15185082029382
-real throughput  (requests / s)      : 75.84771942953694
+hits: 2163 misses: 7837 ratio: 0.2163
+average response time (ms)           : 10.187475109100342
+average cache hit response time (ms) : 0.08817761792003474
+average cache miss response time (ms): 12.974865752640344
+cache throughput (requests / s)      : 98.15974903405778
+real throughput  (requests / s)      : 88.35527295489469
 
 --- weighted_friend_readonly 0.50 Results ---
-hits: 1072 misses: 8928 ratio: 0.1072
-average response time (ms)           : 11.465663266181945
-average cache hit response time (ms) : 0.001328649805552924
-average cache miss response time (ms): 12.842205236248645
-cache throughput (requests / s)      : 87.21693431809628
-real throughput  (requests / s)      : 79.27228928100207
+hits: 2766 misses: 7234 ratio: 0.2766
+average response time (ms)           : 9.404127931594848
+average cache hit response time (ms) : 0.07571936170863484
+average cache miss response time (ms): 12.97094823907415
+cache throughput (requests / s)      : 106.33628203209798
+real throughput  (requests / s)      : 95.07378087157565
 
 --- weighted_friend_readonly 0.75 Results ---
-hits: 2253 misses: 7747 ratio: 0.2253
-average response time (ms)           : 9.959305834770202
-average cache hit response time (ms) : 0.0012218290786980208
-average cache miss response time (ms): 12.855338268592709
-cache throughput (requests / s)      : 100.40860443393278
-real throughput  (requests / s)      : 90.2328882960655
+hits: 4087 misses: 5913 ratio: 0.4087
+average response time (ms)           : 7.68894898891449
+average cache hit response time (ms) : 0.05545212465887814
+average cache miss response time (ms): 12.965137333952995
+cache throughput (requests / s)      : 130.05678688228338
+real throughput  (requests / s)      : 114.06672701630119
 
 --- weighted_friend_readonly 1 Results ---
 hits: 9992 misses: 8 ratio: 0.9992
-average response time (ms)           : 0.01112067699432373
-average cache hit response time (ms) : 0.0008874601894039646
-average cache miss response time (ms): 12.792408466339111
-cache throughput (requests / s)      : 89922.582996559
-real throughput  (requests / s)      : 1052.9166753169109
+average response time (ms)           : 0.011892271041870118
+average cache hit response time (ms) : 0.0006238444506215324
+average cache miss response time (ms): 14.086157083511353
+cache throughput (requests / s)      : 84088.22810035326
+real throughput  (requests / s)      : 1066.9048383247582
