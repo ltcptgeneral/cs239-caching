@@ -9,8 +9,6 @@ from utils import print_report
 
 baseurl = "http://localhost:8000"
 
-chance_of_selecting_friend = 1
-
 user_friends = json.loads(requests.get(baseurl + "/users_and_friends").content)
 user_ids = json.loads(requests.get(baseurl + "/users").content)["ids"]
 
@@ -27,23 +25,25 @@ def generate_random_friend(user):
     next_user = str(random.choice(user_friends[user]))
     return next_user
 
-times = []
-hits = []
+for chance_of_selecting_friend in [0.25, 0.5, 0.75, 1.0]:
 
-start = time.time()
-curr_user = generate_random()
-last_user = curr_user
-for i in tqdm(range(10000)):
-    url = baseurl + "/user/" + curr_user
-    response = requests.get(url)
-    content = json.loads(response.content)
-    times.append(content["time_ms"])
-    hits.append(content["source"] == "cache")
-    if fetch_friend(chance_of_selecting_friend):
-        curr_user = generate_random_friend(last_user)
-    else:
-        curr_user = generate_random()
-        last_user = curr_user
-end = time.time()
+    times = []
+    hits = []
 
-print_report(hits, times, end - start)
+    start = time.time()
+    curr_user = generate_random()
+    last_user = curr_user
+    for i in tqdm(range(10000)):
+        url = baseurl + "/user/" + curr_user
+        response = requests.get(url)
+        content = json.loads(response.content)
+        times.append(content["time_ms"])
+        hits.append(content["source"] == "cache")
+        if fetch_friend(chance_of_selecting_friend):
+            curr_user = generate_random_friend(last_user)
+        else:
+            curr_user = generate_random()
+            last_user = curr_user
+    end = time.time()
+
+    print_report(hits, times, end - start)
